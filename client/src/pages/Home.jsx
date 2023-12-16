@@ -1,7 +1,9 @@
 import React from "react";
-import { Typography, Button, AppBar, Toolbar } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
+import NavBar from "../components/NavBar";
+import FooterBar from "../components/FooterBar";
 
 const AppContainer = styled("div")`
     text-align: center;
@@ -32,43 +34,10 @@ const CustomButton = styled(Button)`
     }
 `;
 
-const StyledAppBar = styled(AppBar)`
-    background-color: #282c34; /* Adjust the color according to your theme */
-`;
-
-const StyledToolbar = styled(Toolbar)`
-    display: flex;
-    justify-content: space-between;
-`;
-
-const LogoLink = styled(Link)`
-    text-decoration: none;
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-`;
-
-const Footer = styled("footer")`
-    background-color: #282c34;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-`;
-
 const Home = () => {
     return (
         <div>
-            <StyledAppBar position="static">
-                <StyledToolbar>
-                    <Typography variant="h6">
-                        <LogoLink to="/">Job Nest</LogoLink>
-                    </Typography>
-                    {/* Add any additional AppBar content or menu items here */}
-                </StyledToolbar>
-            </StyledAppBar>
+            <NavBar />
 
             <AppContainer>
                 <Heading variant="h3" align="center">
@@ -84,11 +53,7 @@ const Home = () => {
                 </ButtonContainer>
             </AppContainer>
 
-            <Footer>
-                <Typography variant="body2">
-                    © {new Date().getFullYear()} Job Nest. All rights reserved.
-                </Typography>
-            </Footer>
+            <FooterBar />
         </div>
     );
 };

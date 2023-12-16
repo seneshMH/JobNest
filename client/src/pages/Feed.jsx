@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
-    AppBar,
     Box,
     Card,
     Container,
     Grid,
     TextField,
-    Toolbar,
     Typography,
     InputAdornment,
     Button,
@@ -16,6 +14,8 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
+import NavBar from "../components/NavBar";
+import FooterBar from "../components/FooterBar";
 
 const FeedContainer = styled(Container)`
     padding: 2% 0;
@@ -47,32 +47,6 @@ const HomeButton = styled(Button)`
     // margin: 5px 0;
 `;
 
-const StyledAppBar = styled(AppBar)`
-    background-color: #282c34;
-`;
-
-const StyledToolbar = styled(Toolbar)`
-    display: flex;
-    justify-content: space-between;
-`;
-
-const LogoLink = styled(Link)`
-    text-decoration: none;
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-`;
-
-const Footer = styled("footer")`
-    background-color: #282c34;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-`;
-
 const Feed = () => {
     const [query, setQuery] = useState("");
     const [post, setPost] = useState();
@@ -95,15 +69,7 @@ const Feed = () => {
 
     return (
         <div>
-            <StyledAppBar position="static">
-                <StyledToolbar>
-                    <Typography variant="h6">
-                        <LogoLink to="/">Job Nest</LogoLink>
-                    </Typography>
-                    {/* Add any additional AppBar content or menu items here */}
-                </StyledToolbar>
-            </StyledAppBar>
-
+            <NavBar />
             <FeedContainer>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sx={12} md={12} lg={12}>
@@ -170,12 +136,7 @@ const Feed = () => {
                         ))}
                 </CardsContainer>
             </FeedContainer>
-
-            <Footer>
-                <Typography variant="body2">
-                    © {new Date().getFullYear()} Job Nest. All rights reserved.
-                </Typography>
-            </Footer>
+            <FooterBar />
         </div>
     );
 };

@@ -6,6 +6,8 @@ import TabPanel from "@mui/lab/TabPanel";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import Create from "./Create";
+import NavBar from "../components/NavBar";
+import FooterBar from "../components/FooterBar";
 
 export default function Home() {
     const [value, setValue] = React.useState("1");
@@ -15,6 +17,7 @@ export default function Home() {
 
     return (
         <>
+            <NavBar />
             <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
                 <Typography variant="h3" sx={{ margin: "2%" }} align="center">
                     EMPLOYER DASHBOARD
@@ -35,6 +38,7 @@ export default function Home() {
                     </TabPanel>
                 </TabContext>
             </Box>
+            <FooterBar />
         </>
     );
 }
