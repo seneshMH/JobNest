@@ -18,25 +18,27 @@ export default function Home() {
     return (
         <>
             <NavBar />
-            <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-                <Typography variant="h3" sx={{ margin: "2%" }} align="center">
-                    EMPLOYER DASHBOARD
-                </Typography>
-                <Button sx={{ margin: "2% 3%" }} variant="outlined">
-                    <Link to="/">Home</Link>
-                </Button>
-            </Box>
-            <Box sx={{ width: "100%", typography: "body1" }}>
-                <TabContext value={value}>
-                    <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-                        <TabList onChange={handleChange} aria-label="lab API tabs example">
-                            <Tab label="Create Post" value="1" />
-                        </TabList>
-                    </Box>
-                    <TabPanel value="1">
-                        <Create />
-                    </TabPanel>
-                </TabContext>
+            <Box>
+                <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+                    <Typography variant="h3" sx={{ margin: "2%" }} align="center">
+                        EMPLOYER DASHBOARD
+                    </Typography>
+                    <Button sx={{ margin: "2% 3%" }} variant="outlined">
+                        <Link to="/">Home</Link>
+                    </Button>
+                </Box>
+                <Box sx={{ width: "100%", typography: "body1" }}>
+                    <TabContext value={value}>
+                        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                            <TabList onChange={handleChange} aria-label="lab API tabs example">
+                                <Tab label="Create Post" value="1" />
+                            </TabList>
+                        </Box>
+                        <TabPanel value="1">
+                            <Create />
+                        </TabPanel>
+                    </TabContext>
+                </Box>
             </Box>
             <FooterBar />
         </>
